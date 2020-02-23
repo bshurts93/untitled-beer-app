@@ -1,11 +1,16 @@
 import React, { Component } from "react";
+import { Container } from "@material-ui/core";
+
+import LoginCard from "../components/login/LoginCard";
+import LoginHero from "../components/login/LoginHero";
 
 class Login extends Component {
   render() {
     return (
-      <div>
-        <h1>untitled-beer-app</h1>
-      </div>
+      <Container>
+        <LoginHero />
+        <LoginCard />
+      </Container>
     );
   }
 }

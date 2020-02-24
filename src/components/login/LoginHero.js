@@ -6,13 +6,14 @@ const useStyles = makeStyles({
   heroImg: {
     width: "100%",
     borderRadius: "0px 0px 19px 19px",
-    marginTop: "-10px"
+    marginTop: "-50px",
+    zIndex: 0
   },
   headerText: {
     fontSize: "35px",
     fontWeight: "bold",
     position: "absolute",
-    bottom: "50px",
+    bottom: "70px",
     padding: "0 20px",
     width: "55%",
     color: "#fff",

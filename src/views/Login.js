@@ -7,7 +7,7 @@ import LoginHero from "../components/login/LoginHero";
 class Login extends Component {
   render() {
     return (
-      <Container>
+      <Container disableGutters>
         <LoginHero />
         <LoginCard />
       </Container>

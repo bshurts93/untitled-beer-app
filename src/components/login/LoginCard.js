@@ -1,19 +1,25 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
+
+import {
+  Card,
+  CardActions,
+  Button,
+  CardContent,
+  Checkbox,
+  FormControlLabel,
+  Grid,
+  TextField,
+  Typography
+} from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 275
-  },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)"
+    zIndex: 100,
+    minWidth: 275,
+    marginTop: "-50px",
+    position: "relative",
+    margin: "0px 25px"
   },
   title: {
     fontSize: 14
@@ -25,33 +31,57 @@ const useStyles = makeStyles({
 
 export default function LoginCard() {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <Card className={classes.root}>
       <CardContent>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          adjective
-        </Typography>
-        <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
+        <Typography>Sign in with</Typography>
+        <Grid container spacing={3}>
+          <Grid item xs>
+            <Typography>Login with Facebook</Typography>
+          </Grid>
+          <Grid item xs>
+            <Typography>Login With Google</Typography>
+          </Grid>
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs>
+            <TextField
+              fullWidth
+              id="login-email"
+              label="Email"
+              variant="outlined"
+              size="small"
+            />
+          </Grid>
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs>
+            <TextField
+              fullWidth
+              id="login-password"
+              label="Password"
+              variant="outlined"
+              size="small"
+            />
+          </Grid>
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs>
+            <FormControlLabel
+              value="top"
+              control={<Checkbox color="primary" />}
+              label="Stay signed in"
+              labelPlacement="right"
+            />
+          </Grid>
+          <Grid item xs>
+            <CardActions>
+              <Button size="small">Forgot password?</Button>
+            </CardActions>
+          </Grid>
+        </Grid>
       </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
   );
 }
